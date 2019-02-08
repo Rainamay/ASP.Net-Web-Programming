@@ -39,6 +39,7 @@ footer {
 aside {
     float: right;
     padding: 5px;
+    margin: 5px;
     background-color: cornflowerblue;
     width: 25%;
 }
