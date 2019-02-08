@@ -1,0 +1,51 @@
+﻿body {
+    font: 20px arial, verdana;
+}
+
+nav a {
+    display: block;
+    
+    background-color:aliceblue;
+    text-decoration: none;
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+}
+
+nav {
+    display: block;
+    float: left;
+    margin: 5px;
+    padding: 10px;
+    width: 25%;
+}
+
+header {
+    text-align: center;
+    background-color: pink;
+    padding: 5px;
+}
+
+footer {
+    width: 97%;
+    position: fixed;
+    bottom: 0;
+    margin: 5px;
+    padding: 5px;
+    background-color: greenyellow;
+    text-align: center;
+}
+
+aside {
+    float: right;
+    padding: 5px;
+    background-color: cornflowerblue;
+    width: 25%;
+}
+
+article {
+    padding: 5px;
+    margin: 5px;
+    display: inline-block;
+    width: 35%;
+}
