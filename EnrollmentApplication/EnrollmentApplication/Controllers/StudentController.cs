@@ -46,7 +46,8 @@ namespace EnrollmentApplication.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "StudentId,FirstName,LastName")] Student student)
+        public ActionResult Create([Bind(Include = "StudentId,FirstName,LastName," +
+            "Address1,Address2,City,Zipcode,State")] Student student)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +79,8 @@ namespace EnrollmentApplication.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "StudentId,FirstName,LastName")] Student student)
+        public ActionResult Edit([Bind(Include = "StudentId,FirstName,LastName," +
+            "Address1,Address2,City,Zipcode,State")] Student student)
         {
             if (ModelState.IsValid)
             {

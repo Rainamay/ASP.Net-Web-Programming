@@ -50,7 +50,7 @@ namespace EnrollmentApplication.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "EnrollmentId,StudentId,CourseId,Grade," +
-            "IsActive,AssignedCampus,EnrollmentSemester,EnrollmentYear")] Enrollment enrollment)
+            "IsActive,AssignedCampus,EnrollmentSemester,EnrollmentYear,Notes")] Enrollment enrollment)
         {
             if (ModelState.IsValid)
             {
@@ -87,7 +87,7 @@ namespace EnrollmentApplication.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "EnrollmentId,StudentId,CourseId,Grade," +
-            "IsActive, AssignedCampus, EnrollmentSemester, EnrollmentYear")] Enrollment enrollment)
+            "IsActive,AssignedCampus,EnrollmentSemester,EnrollmentYear,Notes")] Enrollment enrollment)
         {
             if (ModelState.IsValid)
             {

@@ -18,7 +18,7 @@ namespace EnrollmentApplication.Models
 
         [Required(ErrorMessage = "Must enter a Grade.")]
         [RegularExpression(@"[A-Fa-f]", ErrorMessage = "Grade must be a letter from A to F.")]
-        public virtual char Grade { get; set; }
+        public virtual string Grade { get; set; }
 
         public virtual Student Student { get; set; }
         public virtual Course Course { get; set; }
@@ -35,5 +35,8 @@ namespace EnrollmentApplication.Models
         [Required(ErrorMessage = "Must enter an Enrollment Year.")]
         [Range(2018, int.MaxValue, ErrorMessage = "The Enrollment Year must be 2018 or later.")]
         public virtual int EnrollmentYear { get; set; }
+
+        [InvalidChars("~!()")]
+        public virtual string Notes { get; set; }
     }
 }
