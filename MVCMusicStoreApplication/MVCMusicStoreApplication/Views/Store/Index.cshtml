@@ -1,7 +1,6 @@
 ﻿@model IEnumerable<MVCMusicStoreApplication.Models.Album>
 
 @{
-    Layout = "~/Views/Shared/_Layout2.cshtml";
     ViewBag.Title = "Albums";
 }
 
@@ -18,7 +17,8 @@
 </ul>
 
 <p>
-    @Html.ActionLink("Back to Browse", "Browse", "Store")
+    @Html.ActionLink("Back to Browse", "Browse", "Store",
+     new { @class = "btn btn-primary" })
 </p>
 
 
