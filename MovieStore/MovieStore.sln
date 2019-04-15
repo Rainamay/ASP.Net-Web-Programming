@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.489
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieStore", "MovieStore\MovieStore.csproj", "{6693FDC3-D3B4-48D0-A623-F267B7671D83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieStore.Tests", "MovieStore.Tests\MovieStore.Tests.csproj", "{FE7CE82A-A4E7-4125-9C9F-DCD471303B9A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6693FDC3-D3B4-48D0-A623-F267B7671D83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6693FDC3-D3B4-48D0-A623-F267B7671D83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6693FDC3-D3B4-48D0-A623-F267B7671D83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6693FDC3-D3B4-48D0-A623-F267B7671D83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE7CE82A-A4E7-4125-9C9F-DCD471303B9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE7CE82A-A4E7-4125-9C9F-DCD471303B9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE7CE82A-A4E7-4125-9C9F-DCD471303B9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE7CE82A-A4E7-4125-9C9F-DCD471303B9A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C21FDD31-7954-4DE6-87BA-131A47CFA3DE}
+	EndGlobalSection
+EndGlobal
