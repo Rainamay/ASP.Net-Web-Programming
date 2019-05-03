@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+}
+
+<h2>Event Unlimited</h2>
+
+<p>Find events near you. Never miss out again!</p>
+
+@Ajax.ActionLink("Click here to see last minute deals!",
+    "LastMinuteDeals",
+    null,
+    new AjaxOptions
+    {
+        UpdateTargetId = "lastminutedeals",
+        InsertionMode = InsertionMode.Replace,
+        HttpMethod = "GET"
+    },
+    new { @class = "btn btn-primary" })
+
+<div id="lastminutedeals"></div>
+
+@section Scripts {
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+}

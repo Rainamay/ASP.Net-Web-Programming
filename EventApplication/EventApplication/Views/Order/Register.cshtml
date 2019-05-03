@@ -1,0 +1,18 @@
+﻿@model EventApplication.Models.Event
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Register</h2>
+
+<p>Sale Ends on @Html.DisplayFor(model => model.StartDate)</p>
+
+<div>
+    @Html.DisplayFor(model => model.EventTitle) |
+    
+    @Html.ActionLink("Checkout", "AddToCart", "Order",
+    new { id = Model.EventId,
+            count = 3}, new { @class = "btn btn-primary" })
+</div>
+
