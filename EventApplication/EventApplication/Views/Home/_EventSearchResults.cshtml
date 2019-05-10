@@ -1,13 +1,21 @@
 ﻿@model IEnumerable<EventApplication.Models.Event>
 
 <div id="searchresults">
-    <ul>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>Title</th>
+            <th>Start Date</th>
+            <th>City</th>
+            <th>State</th>
+        </tr>
         @foreach (var item in Model)
         {
-            <li>
-                @Html.ActionLink(item.EventTitle, "Details", "Events", new { id = item.EventId }, "Index")  
-                @item.EventType.Type @item.City @item.State
-            </li>
+            <tr>
+                <td>@Html.ActionLink(item.EventTitle, "Details", "Events", new { id = item.EventId }, "Index")</td> 
+                <td>@item.StartDate</td> 
+                <td>@item.City</td> 
+                <td>@item.State</td>
+            </tr>
         }
-    </ul>
+    </table>
 </div>

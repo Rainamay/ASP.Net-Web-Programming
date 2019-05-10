@@ -35,16 +35,20 @@ namespace EventApplication.Models
             return cartId;
         }
 
-        public void AddToCart(int eventId, int count)
+        public int AddToCart(int eventId, int count)
         {
             // TO DO: Verify that the Album Id exists in the database.
             Order cartItem = db.Orders.SingleOrDefault(c => c.CartId == this.OrderCartId && c.EventId == eventId);
+            Event theEvent = db.Events.Find(eventId);
 
             if (cartItem == null)
             {
+                Random r = new Random();
+                int n = r.Next();
                 // Item is not in cart; add new cart item
                 cartItem = new Order()
                 {
+                    RecordNum = n,
                     CartId = this.OrderCartId,
                     EventId = eventId,
                     Count = count,
@@ -58,8 +62,9 @@ namespace EventApplication.Models
                 // Item is already in cart; increase item count (quantity)
                 cartItem.Count = cartItem.Count + count;
             }
-
+            theEvent.AvailableTickets = theEvent.AvailableTickets - count;
             db.SaveChanges();
+            return cartItem.RecordNum;
         }
 
         public List<Order> GetCartItems()
@@ -67,7 +72,7 @@ namespace EventApplication.Models
             return db.Orders.Where(c => c.CartId == this.OrderCartId).ToList();
         }
 
-        public int RemoveFromCart(int recordId)
+        public void RemoveFromCart(int recordId)
         {
             Order cartItem = db.Orders.SingleOrDefault(c => c.CartId == this.OrderCartId && c.RecordId == recordId);
 
@@ -76,24 +81,14 @@ namespace EventApplication.Models
                 throw new NullReferenceException();
             }
 
-            int newCount;
+            int itemCount = cartItem.Count;
+            Event orderEvent = cartItem.EventSelected;
 
-            if (cartItem.Count > 1)
-            {
-                // Count is greater than 1; Decrement count
-                cartItem.Count--;
-                newCount = cartItem.Count;
-            }
-            else
-            {
-                // Count is at 0; Remove cart item
-                db.Orders.Remove(cartItem);
-                newCount = 0;
-            }
+            orderEvent.AvailableTickets = orderEvent.AvailableTickets + itemCount;
+            
+            db.Orders.Remove(cartItem);
 
             db.SaveChanges();
-
-            return newCount;
         }
     }
 

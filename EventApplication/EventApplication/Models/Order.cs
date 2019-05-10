@@ -11,6 +11,8 @@ namespace EventApplication.Models
         [Key]
         public int RecordId { get; set; }
 
+        public int RecordNum { get; set; }
+
         public string CartId { get; set; }
 
         public int EventId { get; set; }

@@ -1,19 +1,21 @@
 ﻿@model IEnumerable<EventApplication.Models.Event>
 
-<div class="panel panel-primary">
-
-    <div class="panel-heading">
-        <h3 class="panel-title">Last Minute Deals: </h3>
-    </div>
-
-    <div class="panel-body">
-        <div id="event-details">
-            <ul>
+    <div>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th>Title</th>
+                <th>Start Date</th>
+                <th>City</th>
+                <th>State</th>
+            </tr>
             @foreach (var item in Model)
             {
-               <li> @item.EventTitle @item.StartDate</li>
+                <tr>
+                    <td> <a href="~/Events/Details/@item.EventId">@item.EventTitle</a></td>
+                    <td>@item.StartDate</td>
+                    <td>@item.City</td>
+                    <td>@item.State</td>
+                </tr>
             }
-            </ul>
-        </div>
+        </table>
     </div>
-</div>

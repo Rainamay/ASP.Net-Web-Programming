@@ -8,6 +8,7 @@ using EventApplication.Models;
 
 namespace EventApplication.Controllers
 {
+    [Authorize]
     public class OrderController : Controller
     {
         EventDB db = new EventDB();
@@ -39,15 +40,29 @@ namespace EventApplication.Controllers
             return View(@event);
         }
 
+        public ActionResult OrderSummary(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Order @order = db.Orders.Where(d => d.RecordNum == id).First();
+            if (@order == null)
+            {
+                return HttpNotFound();
+            }
+            return View(@order);
+        }
+
         // GET: ShoppingCart/AddToCart
         public ActionResult AddToCart(int id, int count)
         {
             OrderCart cart = OrderCart.GetOrder(this.HttpContext);
-            cart.AddToCart(id, count);
-            return RedirectToAction("Index");
+            int ordernum = cart.AddToCart(id, count);
+            return RedirectToAction("OrderSummary", new { id = ordernum });
         }
 
-        // POST: ShoppingCart/RemoveFromCart
+        // POST: Order/RemoveFromCart
         [HttpPost]
         public ActionResult RemoveFromCart(int id)
         {
@@ -55,13 +70,12 @@ namespace EventApplication.Controllers
 
             Event someEvent = db.Orders.SingleOrDefault(c => c.RecordId == id).EventSelected;
 
-            int newItemCount = cart.RemoveFromCart(id);
+            cart.RemoveFromCart(id);
 
             OrderCartRemoveViewModel vm = new OrderCartRemoveViewModel()
             {
                 DeleteId = id,
-                ItemCount = newItemCount,
-                Message = someEvent.EventTitle + " has been removed from the cart."
+                Message = "Your order has been cancelled."
             };
 
             return Json(vm);

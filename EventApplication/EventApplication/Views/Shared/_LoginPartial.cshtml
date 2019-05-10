@@ -9,9 +9,9 @@
         <li>
             @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
         </li>
-        <li>@Html.ActionLink("Find an event", "Index", "Events")</li>
+        <li>@Html.ActionLink("Find an event", "FindEvent", "Home")</li>
         <li>@Html.ActionLink("Organize an event", "Create", "Events")</li>
-        <li>@Html.ActionLink("Tickets Ordered", "#")</li>
+        <li>@Html.ActionLink("Tickets Ordered", "Index", "Order")</li>
         <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
         </ul>
     }

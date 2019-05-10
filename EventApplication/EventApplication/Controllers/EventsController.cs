@@ -37,6 +37,7 @@ namespace EventApplication.Controllers
         }
 
         // GET: Events/Create
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.EventTypeId = new SelectList(db.EventTypes, "EventTypeId", "Type");
@@ -48,6 +49,7 @@ namespace EventApplication.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create([Bind(Include = "EventId,EventTypeId,EventTitle,EventDescription,StartDate,EndDate,City,State,OrganizerName,OrganizerContact,MaxTickets,AvailableTickets")] Event @event)
         {
             if (ModelState.IsValid)

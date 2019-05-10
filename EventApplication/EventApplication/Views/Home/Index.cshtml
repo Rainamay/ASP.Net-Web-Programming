@@ -7,7 +7,8 @@
 
 <p>Find events near you. Never miss out again!</p>
 
-@Ajax.ActionLink("Click here to see last minute deals!",
+<div class="col-lg-4">
+    @Ajax.ActionLink("Click here to see last minute deals!",
     "LastMinuteDeals",
     null,
     new AjaxOptions
@@ -18,8 +19,29 @@
     },
     new { @class = "btn btn-primary" })
 
-<div id="lastminutedeals"></div>
+    <div id="lastminutedeals"></div>
+</div>
+
+<div class="col-lg-offset-5">
+    <h3>Find an Event</h3>
+    @using (Ajax.BeginForm("EventSearch", "Home",
+        new AjaxOptions
+        {
+            InsertionMode = InsertionMode.Replace,
+            HttpMethod = "GET",
+            OnFailure = "searchFailed",
+            UpdateTargetId = "searchresults",
+        }))
+    {
+        <input type="text" name="q" placeholder="Event Title or Event Type" />
+        <input type="text" name="r" placeholder="City or State" />
+        <input type="submit" value="Search" class="btn btn-primary"/>
+    }
+    <div id="searchresults"></div>
+</div>
 
 @section Scripts {
     <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/Scripts/Apps/EventScript.js"></script>
+    <link href="~/Content/Site.css" rel="stylesheet" />
 }

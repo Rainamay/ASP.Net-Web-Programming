@@ -198,6 +198,26 @@
     <Compile Include="Migrations\201905031815501_Order.Designer.cs">
       <DependentUpon>201905031815501_Order.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905061530557_SampleData.cs" />
+    <Compile Include="Migrations\201905061530557_SampleData.Designer.cs">
+      <DependentUpon>201905061530557_SampleData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905080306554_ordernum.cs" />
+    <Compile Include="Migrations\201905080306554_ordernum.Designer.cs">
+      <DependentUpon>201905080306554_ordernum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905092210257_new.cs" />
+    <Compile Include="Migrations\201905092210257_new.Designer.cs">
+      <DependentUpon>201905092210257_new.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905092218041_7.cs" />
+    <Compile Include="Migrations\201905092218041_7.Designer.cs">
+      <DependentUpon>201905092218041_7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905092224239_pleasework.cs" />
+    <Compile Include="Migrations\201905092224239_pleasework.Designer.cs">
+      <DependentUpon>201905092224239_pleasework.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Event.cs" />
@@ -223,7 +243,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\Apps\Delete.js" />
     <Content Include="Scripts\Apps\EventScript.js" />
+    <Content Include="Scripts\Apps\TixNum.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -289,6 +311,7 @@
     <Content Include="Views\Order\Index.cshtml" />
     <Content Include="Views\Order\Register.cshtml" />
     <Content Include="Views\Order\OrderSummary.cshtml" />
+    <Content Include="Views\Home\_NoResults.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -318,6 +341,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905031815501_Order.resx">
       <DependentUpon>201905031815501_Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905061530557_SampleData.resx">
+      <DependentUpon>201905061530557_SampleData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905080306554_ordernum.resx">
+      <DependentUpon>201905080306554_ordernum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905092210257_new.resx">
+      <DependentUpon>201905092210257_new.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905092218041_7.resx">
+      <DependentUpon>201905092218041_7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905092224239_pleasework.resx">
+      <DependentUpon>201905092224239_pleasework.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

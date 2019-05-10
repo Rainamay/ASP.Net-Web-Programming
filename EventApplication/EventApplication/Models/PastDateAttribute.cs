@@ -10,13 +10,20 @@ namespace EventApplication.Models
     {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-            var date = (DateTime)value;
-            if (date < DateTime.Now)
+            if(!(value is null))
             {
-                return new ValidationResult(ErrorMessage);
+                var date = (DateTime)value;
+                if (date < DateTime.Now)
+                {
+                    return new ValidationResult(ErrorMessage);
+                }
+
+                return ValidationResult.Success;
             }
-                
-            return ValidationResult.Success;
+            else
+            {
+                return ValidationResult.Success;
+            }
         }
     }
 }

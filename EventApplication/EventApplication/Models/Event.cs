@@ -25,13 +25,13 @@ namespace EventApplication.Models
 
         [Required(ErrorMessage = "You must enter a start date.")]
         [DataType(DataType.DateTime)]
-        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy hh:mm tt}")]
         [PastDate(ErrorMessage = "Start date cannot be in the past.")]
         [Display(Name = "Start Date")]
         public virtual DateTime StartDate { get; set; }
 
         [Required(ErrorMessage = "You must enter an end date.")]
-        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy hh:mm tt}")]
         [DataType(DataType.DateTime)]
         [PastDate(ErrorMessage = "End Date cannot be in the past.")]
         [Display(Name = "End Date")]

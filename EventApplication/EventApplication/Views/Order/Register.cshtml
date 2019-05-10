@@ -4,15 +4,31 @@
     ViewBag.Title = "Register";
 }
 
+@section Scripts {
+    <script src="~/Scripts/Apps/TixNum.js"></script>
+}
+
 <h2>Register</h2>
 
 <p>Sale Ends on @Html.DisplayFor(model => model.StartDate)</p>
 
 <div>
     @Html.DisplayFor(model => model.EventTitle) |
-    
-    @Html.ActionLink("Checkout", "AddToCart", "Order",
-    new { id = Model.EventId,
-            count = 3}, new { @class = "btn btn-primary" })
+    <form>
+    <select id="mySelect">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+    </form>
+
+    <a href="#" data-id = "@Html.DisplayFor(model => model.EventId)" class="submitNum btn btn-primary">Checkout</a>
 </div>
 

@@ -55,7 +55,17 @@ namespace EventApplication.Controllers
         public ActionResult EventSearch(string q, string r)
         {
             var events = GetEvents(q, r);
-            return PartialView("_EventSearchResults", events);
+
+            if (events.Count == 0)
+            {
+                return PartialView("_NoResults");
+            }
+            else
+            {
+                return PartialView("_EventSearchResults", events);
+            }
+
+            
         }
 
         private List<Event> GetEvents(string searchString, string searchString2)

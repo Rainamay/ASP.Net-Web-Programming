@@ -1,7 +1,32 @@
-﻿
+﻿@model EventApplication.Models.Order
+
 @{
-    ViewBag.Title = "OrderSummary";
+    ViewBag.Title = "Order Summary";
 }
 
-<h2>OrderSummary</h2>
+@section Scripts {
+    <script src="~/Scripts/myscripts/StoreScript.js"></script>
+}
+
+<h2>Order Summary</h2>
+
+<br />
+<div id="update-message"></div>
+
+<div>
+    <table class="table">
+        <tr>
+            <th>Record Id</th>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>@Html.DisplayFor(model => model.RecordNum)</td>
+            <td>@Html.DisplayFor(model => model.EventSelected.EventTitle)</td>
+            <td>@Html.DisplayFor(model => model.Count)</td>
+        </tr>
+    </table>
+    @Html.ActionLink("Go to my Tickets", "Index", "Order", new {@class = "btn btn-primary"})
+</div>
 

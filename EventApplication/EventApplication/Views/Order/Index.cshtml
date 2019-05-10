@@ -1,23 +1,24 @@
 ﻿@model EventApplication.Models.OrderCartViewModel
 
 @{
-    ViewBag.Title = "Order Summary";
+    ViewBag.Title = "Orders";
 }
 
 @section Scripts {
-    <script src="~/Scripts/myscripts/StoreScript.js"></script>
+    <script src="~/Scripts/Apps/Delete.js"></script>
 }
 
-<h2>Here's your events</h2>
+<h2>Here are your events</h2>
 
 <br />
 <div id="update-message"></div>
 
 <div>
-    <table>
+    <table class="table">
         <tr>
             <th>Title</th>
             <th>Quantity</th>
+            <th>Order Status</th>
             <th></th>
         </tr>
 
@@ -26,8 +27,10 @@
             <tr id="record-@item.RecordId">
                 <td>@item.EventSelected.EventTitle</td>
                 <td id="item-count-@item.RecordId">@item.Count</td>
-                <td><a href="#" data-id="@item.RecordId" class="RemoveLink">Remove</a></td>
+                <td id="item-status-@item.RecordId">Not cancelled</td>
+                <td><a href="#" id="link-@item.RecordId" data-id="@item.RecordId" class="RemoveLink btn btn-primary">Cancel Order</a></td>
             </tr>
         }
     </table>
+    @Html.ActionLink("Back to Browse", "Index", "Home", "Index", new { @class = "btn btn-primary" })
 </div>
